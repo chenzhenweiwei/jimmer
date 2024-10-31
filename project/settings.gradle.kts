@@ -1,3 +1,24 @@
+pluginManagement {
+    repositories {
+        mavenLocal()
+        maven { url = uri("https://maven.aliyun.com/repository/gradle-plugin") }
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+
+dependencyResolutionManagement {
+    repositories {
+        mavenLocal()
+        maven {
+            url = uri("https://maven.aliyun.com/repository/public")
+        }
+        google()
+        mavenCentral()
+    }
+}
+
 rootProject.name = "jimmer"
 include(
     "jimmer-bom",
@@ -15,11 +36,3 @@ include(
 )
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
-
-dependencyResolutionManagement {
-    dependencyResolutionManagement {
-        repositories {
-            mavenCentral()
-        }
-    }
-}
